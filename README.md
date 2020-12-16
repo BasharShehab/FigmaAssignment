@@ -1,5 +1,5 @@
 # figma_app
 Real Estate app
-
-
-![Screenshot1](Screenshots/Screenshot1.jpg)
+Home Page                  |More, auto-scroll carousel!| Moore, reviews!
+:-------------------------:|:-------------------------:|:-------------------------:|
+![](Screenshots/Screenshot1.jpg) | ![](Screenshots/Screenshot2.jpg) | ![](Screenshots/Screenshot3.jpg)
