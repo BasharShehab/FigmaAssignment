@@ -1,12 +1,10 @@
 import 'dart:ui';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:figma_app/ButtonBuilder.dart';
-import 'package:figma_app/CarouselImageSlider.dart';
-import 'package:figma_app/DavidBlock.dart';
-import 'package:figma_app/Reviews.dart';
-import 'package:figma_app/TextBlock.dart';
+
+import 'package:figma_app/Pages/PageTwo.dart';
 import 'package:flutter/material.dart';
-import 'Amenities.dart';
+import 'Blocks/DavidBlock.dart';
+import 'Builders/ButtonBuilder.dart';
+import 'Pages/PageThree.dart';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -20,15 +18,16 @@ class _HomeState extends State<Home> {
   final _controller = ScrollController();
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width;
     var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return MaterialApp(
       home: Scaffold(
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           controller: _controller,
           child: Container(
-            color: Color.fromARGB(255, 229, 229, 229),
+            color: Color.fromARGB(255, 229, 229,
+                229), //Color is not looking good, but that's #E5E5E5 in rgba taken your design, so i'm sticking to it.
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -121,116 +120,8 @@ class _HomeState extends State<Home> {
                     )
                   ],
                 ),
-                Container(
-                  height: screenHeight,
-                  width: screenWidth,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      TextBlock(
-                        alignment: Alignment.topLeft,
-                        padd: EdgeInsets.only(
-                            top: 24, left: 16, right: 16, bottom: 16),
-                        fontFamily: "Lato",
-                        fontSize: 45,
-                        fontWeight: FontWeight.w400,
-                        margin: EdgeInsets.only(right: 90),
-                        text: "The best way to live in downtown.",
-                        height: 1.2,
-                      ),
-                      TextBlock(
-                        alignment: Alignment.center,
-                        padd: EdgeInsets.only(left: 40, right: 40, bottom: 32),
-                        fontFamily: "Lato",
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                        text:
-                            "David Gohn Condos is a modern development of meticulosly crafted apartments, seamlessly stitched into the heart of Richmond Hill. With a ...",
-                        height: 2,
-                        color: Color.fromARGB(255, 41, 41, 41),
-                      ),
-                      CarouselBuilder(
-                        list: [
-                          'assets/backgroundCondo.png',
-                          'assets/Carousel_1.png',
-                          'assets/Carousel_1.png',
-                        ],
-                      ),
-                      Amenities(),
-                    ],
-                  ),
-                ),
-                Container(
-                  height: screenHeight,
-                  width: screenWidth,
-                  padding: EdgeInsets.only(top: 24),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      TextBlock(
-                        alignment: Alignment.center,
-                        padd: EdgeInsets.only(left: 40, right: 40, bottom: 32),
-                        fontFamily: "Lato",
-                        fontSize: 28,
-                        fontWeight: FontWeight.w700,
-                        text: "Management Reviews",
-                        height: 2,
-                        color: Color.fromARGB(255, 41, 41, 41),
-                      ),
-                      CarouselSlider.builder(
-                        itemCount: 15,
-                        itemBuilder: (BuildContext context, int itemIndex) =>
-                            Container(
-                          child: Review(
-                            reviewName: "Sara Peterson",
-                            reviewPicture: "assets/reviewIcon.png",
-                            reviewText:
-                                "Super modern condo. I lived there for about 3 years, the company that runs the building is very professional. I once had a problem with my washer and they send a person to check it out right away",
-                          ),
-                        ),
-                        options: CarouselOptions(initialPage: 0, height: 165),
-                      ),
-                      Image(
-                        image: AssetImage("assets/youngWoman.png"),
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(
-                        height: 32,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 60, right: 60),
-                        child: ButtonBuiler(
-                          padd: EdgeInsets.only(
-                              left: 20, right: 20, top: 8, bottom: 8),
-                          textColor: Colors.white,
-                          color: Colors.blue,
-                          cornerRadius: 5,
-                          fontFamily: "Opensans",
-                          text: "Write a Management Review",
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(left: 60, right: 60, top: 20),
-                        child: ButtonBuiler(
-                          padd: EdgeInsets.only(
-                              left: 20, right: 20, top: 8, bottom: 8),
-                          textColor: Colors.black,
-                          color: Colors.white,
-                          cornerRadius: 5,
-                          fontFamily: "Opensans",
-                          text: "Read More Reviews",
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
-                          borderStyle: BorderStyle.solid,
-                          borderWidth: 1,
-                          borderColor: Color.fromARGB(255, 209, 209, 209),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                PageTwo(),
+                PageThree()
               ],
             ),
           ),
