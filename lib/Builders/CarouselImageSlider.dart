@@ -61,14 +61,15 @@ class _CarouselBuilderState extends State<CarouselBuilder> {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.symmetric(horizontal: 2.0),
-                    decoration:
-                        BoxDecoration(color: Colors.green.withOpacity(0.3)),
-                    child: Image.asset(
-                      imgUrl,
-                      fit: BoxFit.cover,
-                    ));
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.symmetric(horizontal: 2.0),
+                  decoration:
+                      BoxDecoration(color: Colors.green.withOpacity(0.3)),
+                  child: Image.asset(
+                    imgUrl,
+                    fit: BoxFit.cover,
+                  ),
+                );
               },
             );
           }).toList(),

@@ -6,8 +6,8 @@ class DavidBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20.0),
-      alignment: Alignment.topCenter,
+      padding: EdgeInsets.only(left: 20.0, right: 20, top: 15),
+      alignment: Alignment.topRight,
       height: 100,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -17,6 +17,7 @@ class DavidBlock extends StatelessWidget {
         color: Colors.white.withOpacity(0.5),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             "David Gohn Condos",
